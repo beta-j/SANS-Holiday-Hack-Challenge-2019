@@ -66,6 +66,7 @@ Well this was an easy one – a quick google search to learn some “ed” comma
 
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/d6fc87d7-c149-4708-9154-8f890053176e)
 
+[Back to top](#contents)
 #  
 #  
 #  
@@ -99,6 +100,7 @@ I can now log in as `alabaster_snowball`...
 
 ...and we're in! 😄
 
+[Back to top](#contents)
 #  
 #  
 #  
@@ -117,6 +119,7 @@ Running this script we only get 5 possible valid combinations which are easy eno
 
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/a8c35a42-95f8-407f-8cc4-d4d4544a3a43)
 
+[Back to top](#contents)
 #  
 #  
 #  
@@ -229,6 +232,7 @@ That’s it – task completed!
 
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/aeb77791-09bb-49ef-802d-bb57952f0a62)
 
+[Back to top](#contents)
 
 #  
 #  
@@ -274,6 +278,7 @@ Reading the contents of `/home/elfuuser/IOTteethBraces.md` we have a list of ste
 ```
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/2051368e-ab57-4a2a-9192-45c763a55494)
 
+[Back to top](#contents)
 
 #  
 #  
@@ -292,7 +297,7 @@ So I simply try running `/bin/ls` and IT WORKS!
  
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/9ea51226-deba-46fc-8107-c03cfd612c19)
 
-
+[Back to top](#contents)
 #  
 #  
 #  
@@ -438,7 +443,7 @@ PS /home/elf> (Invoke-WebRequest -Uri http://localhost:1225/api/output).RawConte
 
 FINALLY!  - That was a tough one!
 
-
+[Back to top](#contents)
 
 #  
 #  
@@ -601,3 +606,4 @@ That’s it – mission accomplished with a beautiful score of **96000** 😁
 
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/28f787ac-b428-4f2a-b5a1-2dadec545a45)
 
+[Back to top](#contents)
