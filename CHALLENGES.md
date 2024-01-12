@@ -2,8 +2,11 @@
 
 #  
 **[Challenge 1 - MongoPilfer Challenge](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-1---mongo-pilfer-challenge)**
+
 **[Challenge 2 - Escape Ed](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-2---escape-ed)**
+
 **[Challenge 3 - Nyanshell](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-3---nyanshell)**
+
 **[Challenge 4 - Frosty Keypad](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-4--frosty-keypad)**
 #  
 ## Challenge 1 - Mongo Pilfer Challenge ##
