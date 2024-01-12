@@ -3,7 +3,7 @@
 #  
 ## PROCEDURE: ##
 
-The document is lying on the ground of the Quad (top left corner).
+[The document](assets/LetterToElfUPersonnel.pdf) is lying on the ground of the Quad (top left corner).
 
 Text is easily un-redacted by following these steps:
 -  Open the pdf
