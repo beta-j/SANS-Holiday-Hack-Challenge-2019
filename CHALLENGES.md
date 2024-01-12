@@ -274,7 +274,7 @@ So I simply try running `/bin/ls` and IT WORKS!
 #  
 #  
 #  
-## Challenge 8 -	Xms Cheer Laser: ##
+## Challenge 8 -	Xmas Cheer Laser: ##
 
 ### PROCEDURE: ###
 This one was particularly challenging for me as it uses Windows Powershell commands.  I have absolutely no experience with Powershell so I had to do tons of Googling for every command I wanted to run.
@@ -418,3 +418,153 @@ FINALLY!  - That was a tough one!
 
 
 
+#  
+#  
+#  
+## Challenge 9 - Holiday Hack Trail: ##
+
+### PROCEDURE: ###
+
+#### EASY ####
+
+I figure it’s best to start with **Easy** and see where that gets us.  I’ll leave all values set to default for the time being and start the game.
+
+Looks like the objective is for Santa’s sleigh to travel a distance `8000`.  It also looks like the game parameters are being passed in the URI as clear text.
+
+Clicking on **GO**, I note that the **distance remaining** drops down to `7973` (i.e it decreases by `27`) and the `&distance` parameter in the URI changes from `&distance=0` to `&disctance=27`.  Next step seems obvious – I changed the `&distance` parameter to `8000`:
+``hhc://trail.hhc/trail/?difficulty=0&distance=8000&money=5000&pace=0&curmonth=7&curday=2&reindeer=2&runners=2&ammo=100&meds=20&food=392&name0=Sam&health0=100&cond0=0&causeofdeath0=&deathday0=0&deathmonth0=0&name1=Jane&health1=100&cond1=0&causeofdeath1=&deathday1=0&deathmonth1=0&name2=Kendra&health2=100&cond2=0&causeofdeath2=&deathday2=0&deathmonth2=0&name3=John&health3=100&cond3=0&causeofdeath3=&deathday3=0&deathmonth3=0``
+
+and **Distance Remaining** dropped down to `0`.
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/02274aaf-86f0-4304-b38b-2138c5cd95d4)
+
+I clicked on **GO** one last time and that’s it:
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/4b949989-2f9f-4340-b630-1cb59d1366a6)
+
+#  
+#### MEDIUM ####
+
+Just for fun I decided to try my hand at the Medium difficulty level next.  This time around the parameters are not shown in the URI.  However a quick look at the page source whilst playing the game reveals an element `<div id=”statusContainer”>` which is being updated with every run.
+
+Sure enough the container contains all the game parameters in clear text, so once again, I simply update
+``<input type=”hidden” name=”distance” class=”distance” value=”8000> == $0``
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/7351f727-6385-4808-a533-74cbca681407)
+
+And that does the trick:
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/3d0157de-d160-4266-b9e9-f8e178ac48ca)
+
+#  
+#### HARD ####
+
+Now to attempt the Hard Mode – at first glance everything looks identical to “Medium” mode, but when editing the source I get an error saying `status: badHash`.  Looks like the game is a bit smarter now!
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/a0d5b398-2349-484d-ad63-17b12bb833fa)
+
+On closer inspection of the `statusContainer` element I notice that there is a new variable at the end called `hash`.  The hash seems to change with each step progression of the game
+
+I searched for an online hash cracker to see if this hash could give me some information and settled on [https://crackstation.net/](https://crackstation.net/).
+
+With this tool the hashes where identified as MD5 and gave a number which was `1626` at the start of the game and then increased by a seemingly arbitrary amount with every turn.
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/f48b5c90-0ae2-46b4-b332-fe019ed8d560)
+
+So the game must be generating a MD5 hash based on all the game parameters at each turn and submitting this to the server along with the parameters.  The server will return an error and stop the game if the hash does not match the given parameters.
+
+So, I ran through a few game steps and recorded the parameter values in a table, along with the cleartext value of the generated hash
+
+money|	1500|	1500|	1500|	1500
+---|---|---|---|---
+distance|	0|	31|	58|	93
+curmonth|	9|	9|	9|	9
+curday	1	2	3	4
+reindeer	2	2	2	2
+runners	2	2	2	2
+ammo	10	10	10	10
+meds	2	2	2	2
+food	100	92	84	76
+				
+Unhashed:	1626	1650	1670	1698
+
+
+<table>
+  <tr>
+    <th>Money</th>
+    <td>1500</td>
+    <td>1500</td>   
+    <td>1500</td>
+    <td>1500</td>
+  </tr>
+  <tr>
+    <th>Distance</th>
+    <td>0</td>
+    <td>31</td>   
+    <td>58</td>
+    <td>93</td>
+ </tr>
+   <tr>
+    <th>curmonth</th>
+    <td>9</td>
+    <td>9</td>   
+    <td>9</td>
+    <td>9</td>
+ </tr>
+    <tr>
+    <th>curday</th>
+    <td>1</td>
+    <td>2</td>   
+    <td>3</td>
+    <td>4</td>
+ </tr>
+    <tr>
+    <th>reindeer</th>
+    <td>2</td>
+    <td>2</td>   
+    <td>2</td>
+    <td>2</td>
+ </tr>
+ <tr>
+    <th>runners</th>
+    <td>2</td>
+    <td>2</td>   
+    <td>2</td>
+    <td>2</td>
+ </tr>
+ <tr>
+    <th>ammo</th>
+    <td>10</td>
+    <td>10</td>   
+    <td>10</td>
+    <td>10</td>
+ </tr>
+ <tr>
+    <th>meds</th>
+    <td>2</td>
+    <td>2</td>   
+    <td>2</td>
+    <td>2</td>
+ </tr>
+ <tr>
+    <th>food</th>
+    <td>100</td>
+    <td>92</td>   
+    <td>84</td>
+    <td>76</td>
+ </tr>
+  <tr>
+    <th></th>
+    <td></td>
+    <td></td>   
+    <td></td>
+    <td></td>
+ </tr>
+  <tr>
+    <th>UnHashed</th>
+    <td>1626</td>
+    <td>1650</td>   
+    <td>1670</td>
+    <td>1698</td>
+ </tr>
+</table>
