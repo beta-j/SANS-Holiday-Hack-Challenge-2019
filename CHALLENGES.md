@@ -1,7 +1,7 @@
 # CHALLENGES #
 
 #  
-**[#challenge-1---mongo-pilfer-challenge)**
+**[Challenge 1 - Mongo Pilfer Challengeħ(#challenge-1---mongo-pilfer-challenge)**
 
 **[Challenge 2 - Escape Ed](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-2---escape-ed)**
 
