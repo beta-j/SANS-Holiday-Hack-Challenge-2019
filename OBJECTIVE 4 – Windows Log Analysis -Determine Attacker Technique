@@ -1,0 +1,7 @@
+# Objective 4 – Windows Log Analysis: Determine Attacker Technique #
+#  
+
+## PROCEDURE : ##
+I opened the `sysmon-dat.json` file in a text editor and searched for `lsass.exe`.  This gives a single entry with `logon_id 999`.
+
+So I ran a search for `”logon_id”: 999,` and there is only one other entry for process_name `ntdsutil.exe`.  This must be the tool used to dump the hashes from `lsass.exe`.
