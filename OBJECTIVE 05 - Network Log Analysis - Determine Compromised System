@@ -1,0 +1,5 @@
+# Objective 5 – Network Log Analysis: Determine Compromised System #
+
+I opened the `index.html` page in the `ELFU` folder included with the logs which conveniently brings up a RITA GUI.
+
+Looking under **Beacons** I noticed an extraordinarily large amount of connections from **`192.168.134.130`** – this must be the system that’s infected with malware.
