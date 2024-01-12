@@ -475,20 +475,6 @@ So the game must be generating a MD5 hash based on all the game parameters at ea
 
 So, I ran through a few game steps and recorded the parameter values in a table, along with the cleartext value of the generated hash
 
-money|	1500|	1500|	1500|	1500
----|---|---|---|---
-distance|	0|	31|	58|	93
-curmonth|	9|	9|	9|	9
-curday	1	2	3	4
-reindeer	2	2	2	2
-runners	2	2	2	2
-ammo	10	10	10	10
-meds	2	2	2	2
-food	100	92	84	76
-				
-Unhashed:	1626	1650	1670	1698
-
-
 <table>
   <tr>
     <th>Money</th>
@@ -568,3 +554,28 @@ Unhashed:	1626	1650	1670	1698
     <td>1698</td>
  </tr>
 </table>
+
+It was quickly apparent that the hash value was being calculated simply by adding the values of all the other parameters (excluding the difficulty level and the runners’ health level).
+
+The next step was quite easy – I changed the parameter values for the following:
+Distance = `8000`
+Curday = `1`
+Food = `100`
+
+*Note: I could have just changed the distance, but in for a penny, in for a pound, am I right?*
+
+Then worked out the checksum by adding all the parameters:
+``` 1500 + 8000 + 9 + 1 + 2 + 2 + 10 + 2 + 100 =``` **`9626`** 
+
+and then generating a MD5 hash of the checksum using [https://www.md5hashgenerator.com/](https://www.md5hashgenerator.com/)
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/68469061-a915-44ad-abf9-127ccff8ed9f)
+
+I plugged all the parameters (including the new hash) into the browser’s developer console and clicked on **GO**
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/358637e1-e88b-4104-820b-35b4f3ce68e5)
+
+That’s it – mission accomplished with a beautiful score of **96000** 😁
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/28f787ac-b428-4f2a-b5a1-2dadec545a45)
+
