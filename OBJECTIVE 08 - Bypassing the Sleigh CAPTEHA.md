@@ -17,6 +17,9 @@ Following the instructions in a Linux terminal:
 > sudo python3 -m pip install tensorflow_hub
 ```
 
-Still following the instructions we retrain on the downloaded CAPTEHA image set
+Still following the instructions we retrain on the downloaded CAPTEHA image set:
+```
+# python3 retrain.py --image_dir /root/SANS\ Holiday\ Hack\ 2019/img_rec_tf_ml_demo-master/img_rec_tf_ml_demo-master/capteha_images
+```
 
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/74469e36-c161-4476-9b02-42ec5f7ee12c)
