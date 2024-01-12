@@ -33,3 +33,45 @@ db.loadServerScripts();displaySolution();
 ```
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/f3d84589-e83e-4f7b-aa86-d1eea1ce8695)
 
+#  
+#  
+#  
+## Challenge 2 - Escape Ed ##
+
+### PROCEDURE: ###
+
+Well this was an easy one – a quick google search to learn some “ed” commands and type `Q` into the terminal – that’s it!
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/d6fc87d7-c149-4708-9154-8f890053176e)
+
+#  
+#  
+#  
+## Challenge 3 - Nyanshell ##
+
+### PROCEDURE: ###
+
+Running `sudo –l` we see that we are only allowed to run `chattr` as root.  A quick Google search shows that this tool is used to change file attributes.
+
+Looking at the `/etc/passwd` file we see that user `alabaster_snowball` is booting with the shell `/bin/nsh` which probably explains the Nyan Cat popping up on logon.  Running  `lsattr –aR` in `/bin` shows us that there is only one immutable file in the directory and unsurprisingly it’s `/nsh`.
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/78ba7fad-170d-40fe-a93b-f07c3a40ba9d)
+ 
+`Chattr` comes in handy now – we run `sudo chattr –i /bin/nsh` to remove the immutable attribute from `nsh`.
+
+We cannot delete `nsh`, but we can edit it.  So the solution is now quite simple:
+```
+vi /bin/nsh
+```
+
+Replace the contents with:
+```
+#!/bin/bash
+/bin/bash
+```
+
+I can now log in as `alabaster_snowball`...
+
+![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/29c2acc0-911c-4ddd-9d5d-ee80c230f2b6)
+
+...and we're in! 😄
