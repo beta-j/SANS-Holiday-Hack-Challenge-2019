@@ -1,23 +1,27 @@
 # CHALLENGES #
 
 #  
+## CONTENTS: ##
+
 **[Challenge 1 - Mongo Pilfer Challenge](#challenge-1---mongo-pilfer-challenge)**
 
-**[Challenge 2 - Escape Ed](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-2---escape-ed)**
+**[Challenge 2 - Escape Ed](#challenge-2---escape-ed)**
 
-**[Challenge 3 - Nyanshell](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-3---nyanshell)**
+**[Challenge 3 - Nyanshell](#challenge-3---nyanshell)**
 
-**[Challenge 4 - Frosty Keypad](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-4--frosty-keypad)**
+**[Challenge 4 - Frosty Keypad](#challenge-4--frosty-keypad)**
 
-**[Challenge 5 - Graylog](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-5--graylog)**
+**[Challenge 5 - Graylog](#challenge-5--graylog)**
 
-**[Challege 6 - IOT Braces](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-6--iot-braces)**
+**[Challege 6 - IOT Braces](#challenge-6--iot-braces)**
 
-**[Challenge 7 - Linux Path](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-7--linux-path)**
+**[Challenge 7 - Linux Path](#challenge-7--linux-path)**
 
-**[Challenge 8 - Xmas Cheer Laser](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-8--xmas-cheer-laser)**
+**[Challenge 8 - Xmas Cheer Laser](#challenge-8--xmas-cheer-laser)**
 
-**[Challenge 9 - Holiday Hack Trail](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-9---holiday-hack-trail)**
+**[Challenge 9 - Holiday Hack Trail](#challenge-9---holiday-hack-trail)**
+
+
 #  
 ## Challenge 1 - Mongo Pilfer Challenge ##
 
@@ -50,6 +54,7 @@ db.loadServerScripts();displaySolution();
 ```
 ![image](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/assets/60655500/f3d84589-e83e-4f7b-aa86-d1eea1ce8695)
 
+[Back to top](#contents)
 #  
 #  
 #  
