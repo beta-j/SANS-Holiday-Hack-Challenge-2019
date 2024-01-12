@@ -4,7 +4,7 @@
 ## JAMES BALDACCHINO - 26-DEC-2019
 ##
 ## Frosty Keypad Challenge
-## find 4 digit combinations that are prime using 1,3 and 7
+## Find 4 digit combinations that are prime using 1,3 and 7
 ## One of the digits is repeated once
 ##############################################################################
 
@@ -34,7 +34,7 @@ if count>1:
 return count;
 
 
-for num in range(1137,7731):  #smallest possible number with available digits and constrains is 1137, largest is 7731
+for num in range(1137,7731):  #smallest possible number using the available digits and within the pin constraints is 1137, while the largest is 7731
 if check_if_prime(num)==1: #If the combination is prime..
 if all((d in digits) for d in str(num)) and len(str(num))==4:   #and the combination is only composed of 1,3 and 7 and is 4 digits long...
 if repeated_digits(num)<3:  #and has no digits repeated more than twice
