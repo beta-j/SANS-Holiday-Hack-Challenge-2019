@@ -8,6 +8,16 @@
 **[Challenge 3 - Nyanshell](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-3---nyanshell)**
 
 **[Challenge 4 - Frosty Keypad](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-4--frosty-keypad)**
+
+**[Challenge 5 - Graylog](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-5--graylog)**
+
+**[Challege 6 - IOT Braces](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-6--iot-braces)**
+
+**[Challenge 7 - Linux Path](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-7--linux-path)**
+
+**[Challenge 8 - Xmas Cheer Laser](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-8--xmas-cheer-laser)**
+
+**[Challenge 9 - Holiday Hack Trail](https://github.com/beta-j/SANS-Holiday-Hack-Challenge-2019/blob/main/CHALLENGES.md#challenge-9---holiday-hack-trail)**
 #  
 ## Challenge 1 - Mongo Pilfer Challenge ##
 
@@ -572,7 +582,7 @@ Food = `100`
 *Note: I could have just changed the distance, but in for a penny, in for a pound, am I right?*
 
 Then worked out the checksum by adding all the parameters:
-``` 1500 + 8000 + 9 + 1 + 2 + 2 + 10 + 2 + 100 =``` **`9626`** 
+$$1500 + 8000 + 9 + 1 + 2 + 2 + 10 + 2 + 100 = 9626$$
 
 and then generating a MD5 hash of the checksum using [https://www.md5hashgenerator.com/](https://www.md5hashgenerator.com/)
 
